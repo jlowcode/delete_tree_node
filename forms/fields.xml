@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<form>
+    <fields addfieldpath="/administrator/components/com_fabrik/models/fields" name="params">
+        <fieldset label="COM_FABRIK_OPTIONS" name="plg-list-delete_tree_node">
+            <field type="helplink"
+                   url="PLG_LIST_DELETE_TREE_NODE_HELP_SERVER" />
+
+            <field name="parent_column"
+                   label="PLG_FABRIK_LIST_DELETE_TREE_NODE_PARENT_COLUMN"
+                   description="PLG_FABRIK_LIST_DELETE_TREE_NODE_PARENT_COLUMN_DESC"
+                   size="30"
+                   type="listfields"
+            />
+
+            <field name="option_delete"
+                   type="radio"
+                   class="btn-group"
+                   default="1"
+                   description="PLG_LIST_DELETE_TREE_NODE_OPTION_DESC"
+                   label="PLG_LIST_DELETE_TREE_NODE_OPTION"
+                   repeat="true">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </field>
+        </fieldset>
+    </fields>
+</form>
