@@ -16,11 +16,11 @@ Este é um plug-in de lista, que tem como funcionalidade permitir ao usuário ex
 		
 		-  **C**
 
-Ao excluir o item "B", é estabelecido o vínculo de "C" para "A"
+Ao excluir o item "B", é estabelecido o vínculo de "C" para "A".
 
 ## Uso
 
-Com o plug-in devidamente instalado no Joomla, podemos usa-los nos plug-ins de listas, conforme mostra a imagem abaixo:
+Com o plug-in devidamente instalado no Joomla, podemos usá-los nos plug-ins de listas, conforme mostra a imagem abaixo:
 ![lista delete](https://user-images.githubusercontent.com/107778190/174809286-590763c5-601a-4dc2-a649-2c6dbd2ce8b4.jpeg)
 ![WhatsApp Image 2022-06-21 at 11 30 18](https://user-images.githubusercontent.com/107778190/174825325-b190eb17-4f88-44d0-ac71-2c886754ca79.jpeg)
 - **Parent Column:** Escolher o elemento (item/coluna) que será excluído.
