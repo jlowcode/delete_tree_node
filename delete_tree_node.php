@@ -54,7 +54,7 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 		{
 			$db    = FabrikWorker::getDbo();
 			$query = $db->getQuery(true);
-			$query->select("id, name, params")->from("#__{package}_elements")->where("id = " . $id);
+			$query->select("id, name, params")->from("#__fabrik_elements")->where("id = " . $id);
 			$db->setQuery($query);
 			$result = $db->loadAssoc();
 			$result["params"] = json_decode($result["params"]);
