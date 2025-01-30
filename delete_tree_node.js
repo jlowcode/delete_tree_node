@@ -18,7 +18,7 @@ define(['jquery', 'fab/list-plugin'], function (jQuery, FbListPlugin) {
         //Do the ajax function
         doAjax: function (selectedIds) {
             jQuery.ajax ({
-                url: 'delete_tree_node.php',
+                url: '',
                 method: "POST",
                 data: {
                     'option': 'com_fabrik',
@@ -32,8 +32,7 @@ define(['jquery', 'fab/list-plugin'], function (jQuery, FbListPlugin) {
                     'db_join_column': this.options.db_join_column,
                     'listid': this.options.listid,
                     'option_delete': this.options.option_delete
-                },
-                dataType: "json"
+                }
             }).done (function (data) {
                 location.reload();
             }.bind(this));

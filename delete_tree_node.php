@@ -8,6 +8,8 @@ use Joomla\Utilities\ArrayHelper;
 // Require the abstract plugin class
 require_once COM_FABRIK_FRONTEND . '/models/plugin-list.php';
 
+use Joomla\CMS\Factory;
+
 class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 {
 	protected $acl = array();
@@ -52,7 +54,7 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 
 		if ($id)
 		{
-			$db    = FabrikWorker::getDbo();
+			$db = Factory::getContainer()->get('DatabaseDriver');
 			$query = $db->getQuery(true);
 			$query->select("id, name, params")->from("#__fabrik_elements")->where("id = " . $id);
 			$db->setQuery($query);
@@ -70,7 +72,8 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 	 * @param $table_name   table's name
 	 */
 	public function deleteRows ($ids, $table_name) {
-		$db = FabrikWorker::getDbo();
+		$db = Factory::getContainer()->get('DatabaseDriver');
+
 		foreach ($ids as $id) {
 			$db->setQuery(
 				"DELETE FROM " . $table_name .
@@ -100,7 +103,8 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 	 * @return array
 	 */
 	public function getChilds ($id, $table_name, $column) {
-		$db = FabrikWorker::getDbo();
+		$db = Factory::getContainer()->get('DatabaseDriver');
+
 		$result = array();
 		$query = $db->getQuery(true);
 		$query->select("id")->from($table_name)->where($column . " = " . $id);
@@ -120,7 +124,7 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 	 *
 	 */
 	public function deleteDBJoinSingle ($ids, $table_name, $column) {
-		$db = FabrikWorker::getDbo();
+		$db = Factory::getContainer()->get('DatabaseDriver');
 		$ids_to_delete = array();
 		foreach ($ids as $id)
 		{
@@ -182,7 +186,7 @@ class PlgFabrik_ListDelete_tree_node extends PlgFabrik_List
 	/**
 	 * Main function to get data via ajax and call the methods
 	 */
-	public function ondelete () {
+	public function onDelete () {
 		$selectedIds = $_POST["selectedIds"];
 		$option_delete = $_POST["option_delete"];
 		$table_name = $_POST["table_name"];
